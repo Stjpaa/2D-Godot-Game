@@ -22,7 +22,12 @@ func init(player: Player) -> void:
 		child.player = player
 		
 		change_state(BaseState.State.Idle)
-		
+
+func process(delta: float) -> void:
+	var new_state = current_state.process(delta)
+	if new_state != BaseState.State.Null:
+		change_state(new_state)
+
 func physics_process(delta: float) -> void:
 	var new_state = current_state.physics_process(delta)
 	if new_state != BaseState.State.Null:

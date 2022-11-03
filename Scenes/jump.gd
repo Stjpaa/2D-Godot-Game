@@ -7,6 +7,9 @@ func enter() -> void:
 	.enter()
 	player.velocity.y = -jump_force
 
+func process(delta: float) -> int:
+	return State.Null
+
 func physics_process(delta: float) -> int:
 	var move = 0
 	
@@ -20,8 +23,8 @@ func physics_process(delta: float) -> int:
 	player.velocity.y += player.gravity
 	player.velocity = player.move_and_slide(player.velocity, Vector2.UP)
 	
-	if player.velocity.y > 0:
-		return State.Fall
+	#if player.velocity.y > 0:
+		#return State.Fall
 		
 	if player.is_on_floor():
 		if move != 0:

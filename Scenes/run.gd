@@ -5,9 +5,15 @@ export (float) var move_speed = 150
 func enter() -> void:
 	.enter()
 
+func exit() -> void:
+	.exit()
+	
 func input(event: InputEvent) -> int:
 	if Input.is_action_just_pressed("jump"):
 		return State.Jump
+	return State.Null
+	
+func process(delta: float) -> int:
 	return State.Null
 
 func physics_process(delta: float) -> int:
