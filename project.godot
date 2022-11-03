@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "BaseState",
 "language": "GDScript",
-"path": "res://Scripts/base_state.gd"
+"path": "res://Scripts/PlayerScripts/base_state.gd"
 }, {
 "base": "HBoxContainer",
 "class": "ContributorClass",
@@ -29,10 +29,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/github-integration/scripts/InvitationItem.gd"
 }, {
-"base": "Reference",
+"base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Scripts/Player.gd"
+"path": "res://Scripts/PlayerScripts/Player.gd"
 }, {
 "base": "PanelContainer",
 "class": "RepositoryItem",

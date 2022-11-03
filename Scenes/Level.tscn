@@ -3,14 +3,14 @@
 [ext_resource path="res://Characters/character_0001.png" type="Texture" id=1]
 [ext_resource path="res://Tilemap/tiles_packed.png" type="Texture" id=2]
 [ext_resource path="res://Characters/character_0000.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Level.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Gravityfield.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/state_manager.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/idle.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/jump.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/run.gd" type="Script" id=10]
-[ext_resource path="res://Scenes/fall.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/PlayerScripts/Player.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/LevelScripts/Level.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/GameScripts/Gravityfield.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/PlayerScripts/state_manager.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/PlayerScripts/idle.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/PlayerScripts/jump.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/PlayerScripts/run.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/PlayerScripts/fall.gd" type="Script" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -119,7 +119,6 @@ script = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 1 )
 animation = "Walk"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
