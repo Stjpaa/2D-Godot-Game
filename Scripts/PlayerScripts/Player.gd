@@ -1,8 +1,8 @@
 class_name Player
 extends KinematicBody2D
 
-const default_gravity = 12
-var gravity = 0
+const default_gravity: Vector2 = Vector2(0, 12)
+var gravity: Vector2 = Vector2.ZERO
 var velocity = Vector2.ZERO
 
 const move_speed = 150
@@ -29,6 +29,6 @@ func GravityFieldEntered(body, field_gravity):
 	print("Body entered")
 	print(gravity)
 
-func _on_Gravityfield_body_exited(body, field_gravity):
+func GravityFieldExited(body):
 	gravity = default_gravity
 	print("Body Exited")

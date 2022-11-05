@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilemap/tiles_packed.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Gravityfield.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/LevelScripts/Level.gd" type="Script" id=5]
-[ext_resource path="res://Scripts/GameScripts/Gravityfield.gd" type="Script" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 18, 18, 0, 18, 0, 0, 18, 0 )
@@ -82,9 +82,6 @@ points = PoolVector2Array( 18, 18, 0, 18, 0, 0, 18, 0 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 387, 16 )
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 37.25, 74.75 )
-
 [node name="Level" type="Node2D"]
 position = Vector2( 273, 280 )
 script = ExtResource( 5 )
@@ -104,25 +101,14 @@ position = Vector2( 192, 138 )
 shape = SubResource( 7 )
 
 [node name="GravityFieldList" type="Node2D" parent="."]
+position = Vector2( 286, -9 )
 
-[node name="Gravityfield" type="Area2D" parent="GravityFieldList"]
-position = Vector2( 14, -85 )
-gravity_vec = Vector2( 0, 0 )
-script = ExtResource( 6 )
-field_gravity = -15
+[node name="Gravityfield" parent="GravityFieldList" instance=ExtResource( 3 )]
+position = Vector2( -23, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityFieldList/Gravityfield"]
-position = Vector2( 255, 76 )
-shape = SubResource( 8 )
-
-[node name="Gravityfield2" type="Area2D" parent="GravityFieldList"]
-position = Vector2( -124, -84 )
-gravity_vec = Vector2( 0, 0 )
-script = ExtResource( 6 )
-field_gravity = -7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityFieldList/Gravityfield2"]
-position = Vector2( 250, 74 )
-shape = SubResource( 8 )
+[node name="PowDirection" parent="GravityFieldList/Gravityfield" index="1"]
+position = Vector2( -100, 15 )
 
 [connection signal="body_entered" from="Restart" to="." method="_on_Area2D_body_entered"]
+
+[editable path="GravityFieldList/Gravityfield"]

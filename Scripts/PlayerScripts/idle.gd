@@ -12,7 +12,7 @@ func process(delta: float) -> int:
 	return State.Null
 	
 func physics_process(delta: float) -> int:
-	player.velocity.y += player.gravity
+	player.velocity += player.gravity
 	player.velocity = player.move_and_slide(player.velocity, Vector2.UP)
 	
 	if !player.is_on_floor():

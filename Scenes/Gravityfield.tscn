@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/GameScripts/Gravityfield.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 37.25, 74.75 )
+
+[node name="Gravityfield" type="Area2D"]
+gravity_vec = Vector2( 0, 0 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 8 )
+
+[node name="PowDirection" type="Node2D" parent="."]
