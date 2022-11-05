@@ -107,7 +107,7 @@ position = Vector2( 286, -9 )
 position = Vector2( -23, 1 )
 
 [node name="PowDirection" parent="GravityFieldList/Gravityfield" index="1"]
-position = Vector2( -100, 15 )
+position = Vector2( 0, 13 )
 
 [connection signal="body_entered" from="Restart" to="." method="_on_Area2D_body_entered"]
 

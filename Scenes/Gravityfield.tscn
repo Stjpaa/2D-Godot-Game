@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/GameScripts/Gravityfield.gd" type="Script" id=1]
+[ext_resource path="res://Gravityfield.png" type="Texture" id=2]
+[ext_resource path="res://Shader.tres" type="Material" id=3]
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 37.25, 74.75 )
@@ -13,3 +15,10 @@ script = ExtResource( 1 )
 shape = SubResource( 8 )
 
 [node name="PowDirection" type="Node2D" parent="."]
+
+[node name="GravityfieldTexture" type="Sprite" parent="."]
+material = ExtResource( 3 )
+scale = Vector2( 0.479999, 0.520001 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( -1.045, 0.315, 160, 290 )
